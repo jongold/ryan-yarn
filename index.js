@@ -6,7 +6,7 @@ tube.pipe(process.stdout);
 const fs = require('fs');
 
 module.exports = (args) => {
-  fs.createReadStream('./ryan.png').pipe(tube);
+  fs.createReadStream(__dirname + '/ryan.png').pipe(tube);
 
   console.log(`You can do it ${process.env.USER || '' }!`);
   const cmd = `yarn ${args.join(' ')}`;
