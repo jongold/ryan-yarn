@@ -1,0 +1,14 @@
+{
+  "name": "ryan-yarn",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Jon Gold <hello@designedbygold.com> (http://jon.gold)",
+  "license": "MIT",
+  "bin": {
+    "ryan": "./bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "picture-tube": "^1.0.0"
+  }
+}
