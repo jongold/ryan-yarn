@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
 const pictureTube = require('picture-tube')
 const chalk = require('chalk');
 const tube = pictureTube({ cols: 48 });
@@ -11,12 +11,5 @@ module.exports = (args) => {
   console.log(`You can do it ${process.env.USER || '' }!`);
   const cmd = `yarn ${args.join(' ')}`;
   console.log(chalk.white(cmd));
-  exec(cmd, (e, stdout, stderr) => {
-    if (e instanceof Error) {
-        return console.error(chalk.red(e.message));
-    }
-    console.log(stdout);
-    console.log(stderr);
-  });
-
+  spawn('yarn', args || ['help'], { stdio: 'inherit' });
 }
